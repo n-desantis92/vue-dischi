@@ -13,18 +13,18 @@
   <div id="app">
     <div class="container">
       <header>
-
+        <h1>Album's music</h1>
       </header>
       <main>
         <div class="row-disks">
-          <div class="disk" v-for="item in listaDischi">
+          <div class="disk" v-for="album in listaDischi">
             <div class="cover">
-              <img src="https://i.pinimg.com/originals/8e/e8/65/8ee8650b530e40666b269c7c7292f306.png" alt="cover">
+              <img :src="album.poster" alt="cover">
             </div>
-            <h2 class="title">titolo</h2>
-            <h3 class="autore">autore</h3>
-            <h3 class="genere">genere</h3>
-            <h3 class="anno">anno</h3>
+            <h2 class="title">{{album.title}}</h2>
+            <h3 class="autore">{{album.author}}</h3>
+            <h3 class="genere">{{album.genre}}</h3>
+            <h3 class="anno">{{album.year}}</h3>
           </div>
         </div>
       </main>
