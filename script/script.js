@@ -3,6 +3,7 @@ var app = new Vue ({
 
   data: {
     listaDischi: [],
+    listaGeneri: [],
   },
 
   mounted: function() {
@@ -12,9 +13,25 @@ var app = new Vue ({
     .then( (risposta) => {
       this.listaDischi = risposta.data.response;
       console.log(this.listaDischi);
-      
+
+      for (var i = 0; i < this.listaDischi.length; i++) {
+
+        if (this.listaGeneri.includes(this.listaDischi[i].genre) == false) {
+          this.listaGeneri.push(this.listaDischi[i].genre);
+        }
+      }
+
+
     });
 
 
+  },
+  methods:{
+    filtragen: function(item,i) {
+      this.listaDischi.forEach((genere, i) => {
+        console.log("ciao");
+      });
+
+    },
   }
 })
