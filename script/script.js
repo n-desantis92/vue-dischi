@@ -3,12 +3,13 @@ var app = new Vue ({
 
   data: {
     listaDischi: [],
-    listaGeneri: [],
+    listaGeneri: ["All",],
+    genere: "All",
   },
 
   mounted: function() {
 
-
+    console.log(this.genere);
     axios.get('https://flynn.boolean.careers/exercises/api/array/music')
     .then( (risposta) => {
       this.listaDischi = risposta.data.response;
@@ -27,11 +28,11 @@ var app = new Vue ({
 
   },
   methods:{
-    filtragen: function(item,i) {
-      this.listaDischi.forEach((genere, i) => {
-        console.log("ciao");
-      });
-
-    },
+    // filtragen: function(item,i) {
+    //   this.listaDischi.forEach((genere, i) => {
+    //     console.log("ciao");
+    //   });
+    //
+    // },
   }
 })

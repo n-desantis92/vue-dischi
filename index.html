@@ -21,12 +21,11 @@
         <h1>Album's music</h1>
       </header>
       <main>
-        <select class="generi" >
-          <option>All</option>
-          <option @click="filtragen(genere,i)" v-for="(genere,i) in listaGeneri">{{genere}}</option>
+        <select class="generi" v-model="genere">
+          <option  v-for="(generesel,i) in listaGeneri" >{{generesel}}</option>
         </select>
         <div class="row-disks">
-          <div class="disk" v-for="album in listaDischi" v-show="">
+          <div v-if="album.genre == genere || genere == 'All'" class="disk" v-for="album in listaDischi" >
             <div class="cover">
               <img :src="album.poster" alt="cover">
             </div>
@@ -35,6 +34,7 @@
             <h3 class="genere">{{album.genre}}</h3>
             <h3 class="anno">{{album.year}}</h3>
           </div>
+
         </div>
       </main>
     </div>
