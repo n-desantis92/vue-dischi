@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <title> Vue Dischi Musicali</title>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <header>
+
+      </header>
+      <main>
+        <div class="row-disks">
+          <div class="disk" v-for="item in listaDischi">
+            <div class="cover">
+              <img src="https://i.pinimg.com/originals/8e/e8/65/8ee8650b530e40666b269c7c7292f306.png" alt="cover">
+            </div>
+            <h2 class="title">titolo</h2>
+            <h3 class="autore">autore</h3>
+            <h3 class="genere">genere</h3>
+            <h3 class="anno">anno</h3>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="script/script.js" charset="utf-8"></script>
+</body>
+</html>
