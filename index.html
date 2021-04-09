@@ -22,7 +22,7 @@
       </header>
       <main>
         <select class="generi" v-model="genere">
-          <option  v-for="(generesel,i) in listaGeneri" >{{generesel}}</option>
+          <option  v-for="(generesel,i) in listaGeneri" :value="generesel" >{{generesel}}</option>
         </select>
         <div class="row-disks">
           <div v-if="album.genre == genere || genere == 'All'" class="disk" v-for="album in listaDischi" >
